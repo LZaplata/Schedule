@@ -1,0 +1,19 @@
+{
+    "name": "lzaplata/schedule",
+    "description": "Simple schedule for Nette",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zap",
+            "email": "zap@hucr.cz"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "nette/nette": "^2.3.10",
+        "nette/utils": "^2.3.10"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    }
+}
