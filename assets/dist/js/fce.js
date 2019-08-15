@@ -4,9 +4,12 @@ $(document).ready(function () {
     var active = $(".schedule-wrapper .rooms .room .block.active").get(0);
     var screenWidth = screen.width;
     var nameWidth = room.children(".name").outerWidth();
-    var activeOffset = parseInt(active.style.left) + parseInt(active.lastElementChild.offsetWidth) + room.offset().left + nameWidth;
+    
+    if (active) {
+        var activeOffset = parseInt(active.style.left) + parseInt(active.lastElementChild.offsetWidth) + room.offset().left + nameWidth;
 
-    $(".schedule-wrapper").scrollLeft(activeOffset - (screenWidth / 2));
+        $(".schedule-wrapper").scrollLeft(activeOffset - (screenWidth / 2));
+    }
 
     $(".schedule-wrapper").mousedown(function (e) {
         e.preventDefault();
