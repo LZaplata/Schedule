@@ -110,7 +110,7 @@ class BlockControl extends Control
      */
     public function getActualInterval()
     {
-        $time = DateTime::from("13:10");
+        $time = DateTime::from("now");
         $interval = $this->scheduleControl->getStartTime()->diff($time);
 
         if ($interval->invert) {
