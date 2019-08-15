@@ -1,0 +1,33 @@
+<div class="schedule-wrapper">
+    <div class="schedule">
+        <div class="timeline">
+            <div n:class="time" n:for="$i = 0; $i < $interval; $i++">
+                {var $startTime = $i == 0 ? $startTime : $startTime->modify("+1 hour")}
+
+                <span>
+                {$startTime->format("H:i")}
+            </span>
+            </div>
+        </div>
+        <div class="rooms" n:snippet="rooms">
+            {foreach $rooms as $key => $room}
+                {control room-$key}
+            {/foreach}
+        </div>
+    </div>
+</div>
+
+<script>
+    {*setInterval(function () {*}
+    {*    $.ajax({*}
+    {*        url: {$control->link("Refresh!")},*}
+    {*        success: function (payload) {*}
+    {*            for (snippet in payload.snippets) {*}
+    {*                if (snippet == "snippet-schedule-rooms") {*}
+    {*                    $(".schedule .rooms").html(payload.snippets[snippet]);*}
+    {*                }*}
+    {*            }*}
+    {*        }*}
+    {*    })*}
+    {*}, 1000 * 60);*}
+</script>
