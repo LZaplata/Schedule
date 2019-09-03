@@ -94,8 +94,8 @@ class RoomControl extends Control
      */
     private function getBlocks()
     {
-        if (isset($this->blocks[date("N")])) {
-            return $this->blocks[date("N")];
+        if (isset($this->blocks[$this->scheduleControl->getDayOfWeek()])) {
+            return $this->blocks[$this->scheduleControl->getDayOfWeek()];
         } else return [];
     }
 

@@ -1,3 +1,14 @@
+<div class="schedule-day-select mb-3">
+    <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="day" data-toggle="dropdown">
+            {$days[$dayOfWeek]}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="day" n:inner-foreach="$days as $key => $day">
+            <a class="dropdown-item" href="{link this dayOfWeek => $key}">{$day}</a>
+        </div>
+    </div>
+</div>
+
 <div class="schedule-wrapper">
     <div class="schedule">
         <div class="timeline">
