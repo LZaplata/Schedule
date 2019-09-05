@@ -16,11 +16,11 @@
                 {var $startTime = $i == 0 ? $startTime : $startTime->modify("+1 hour")}
 
                 <span>
-                {$startTime->format("H:i")}
-            </span>
+                    {$startTime->format("H:i")}
+                </span>
             </div>
         </div>
-        <div class="rooms" n:snippet="rooms">
+        <div n:class="rooms, $startTime < Nette\Utils\DateTime::from('now') ? ended" n:snippet="rooms">
             {foreach $rooms as $key => $room}
                 {control room-$key}
             {/foreach}

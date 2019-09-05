@@ -9,6 +9,10 @@ $(document).ready(function () {
         var activeOffset = parseInt(active.style.left) + parseInt(active.lastElementChild.offsetWidth) + room.offset().left + nameWidth;
 
         $(".schedule-wrapper").scrollLeft(activeOffset - (screenWidth / 2));
+    } else {
+        if ($(".schedule-wrapper .rooms.ended").length) {
+            $(".schedule-wrapper").scrollLeft($(".schedule").outerWidth());
+        }
     }
 
     $(".schedule-wrapper").mousedown(function (e) {
