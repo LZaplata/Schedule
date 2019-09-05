@@ -72,7 +72,7 @@ class RoomControl extends Control
             $this->scheduleControl->setStartTime($startTime);
         }
 
-        if ($this->scheduleControl->getEndTime() < $endTime || $this->scheduleControl->getEndTime() === null && $dayOfWeek == $this->scheduleControl->getDayOfWeek()) {
+        if (($this->scheduleControl->getEndTime() < $endTime || $this->scheduleControl->getEndTime() === null) && $dayOfWeek == $this->scheduleControl->getDayOfWeek()) {
             $this->scheduleControl->setEndTime($endTime);
         }
 
