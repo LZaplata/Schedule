@@ -1,8 +1,12 @@
-<div class="schedule-day-select mb-3 d-flex">
-    <a href="{link this dayOfWeek => $key}" n:foreach="$days as $key => $day" n:class="btn, btn-outline-secondary, d-inline-flex, mr-3, $dayOfWeek == $key ? active">
-        {$day}
-    </a>
-
+<div class="schedule-day-select mb-3 d-flex justify-content-between align-items-center">
+    <p class="mb-0 h4 font-weight-normal flex-grow-1">
+        Dnes je {$control->startTime->format("j. n. Y")}
+    </p>
+    <div class="flex-grow-1">
+        <a href="{link this dayOfWeek => $key}" n:foreach="$days as $key => $day" n:class="btn, btn-outline-secondary, d-inline-flex, mr-3, $dayOfWeek == $key ? active">
+            {$day}
+        </a>
+    </div>
 {*    <div class="dropdown">*}
 {*        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="day" data-toggle="dropdown">*}
 {*            {$days[$dayOfWeek]}*}
@@ -11,6 +15,7 @@
 {*            <a class="dropdown-item" href="{link this dayOfWeek => $key}">{$day}</a>*}
 {*        </div>*}
 {*    </div>*}
+    <div class="flex-grow-1"></div>
 </div>
 
 <div class="schedule-wrapper">
