@@ -1,8 +1,16 @@
 $gray:                              #e9ecef
 $gray-dark:                         #dbdbdb
-$yellow:                            #ffe977
-$yellow-dark:                       #e5ce7a
-$yellow-light:                      #faf9e7
+$active:                            #10de02
+$active-dark:                       darken($active, 20%)
+$active-light:                      lighten($active, 20%)
+$cancelled:                         #ff3838
+$cancelled-dark:                    darken($cancelled, 20%)
+$cancelled-light:                   lighten($cancelled, 20%)
+$warning:                           #ffe977
+$warning-dark:                      darken($warning, 20%)
+$warning-light:                     lighten($warning, 20%)
+//$warning-dark:                      #e5ce7a
+//$warning-light:                     #faf9e7
 
 $room-name-width:                   150px
 
@@ -79,12 +87,28 @@ $room-name-width:                   150px
                         height: inherit
 
                         &.active
-                            border-color: $yellow-dark
-                            background: $yellow-light
-                            z-index: 3
+                            border-color: $active-dark
+                            background: $active-light
+                            z-index: 10
+
+                        &.cancelled
+                            border-color: $cancelled-dark
+                            background: $cancelled-light
+                            z-index: 11
+
+                            span
+                                background-color: $cancelled !important
+
+                        &.warning
+                            border-color: $warning-dark
+                            background: $warning-light
+                            z-index: 11
+
+                            span
+                                background-color: $warning !important
 
                         &:hover, &:focus, &:active
-                            z-index: 10
+                            z-index: 3
                             width: auto !important
 
                         & > .name
@@ -109,5 +133,5 @@ $room-name-width:                   150px
                             left: 0
                             top: 0
                             height: 100%
-                            background: $yellow
+                            background: $active
                             z-index: 1

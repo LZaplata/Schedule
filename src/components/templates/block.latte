@@ -2,7 +2,7 @@
 {var $px = $absoluteEndInterval == 0 ? 2 : 1}
 {var $percent = ($actualInterval - $startInterval) / (($endInterval - $startInterval) / 100)}
 
-<div n:class="block, $active ? active" style="width: {($interval * 5) + $px}px; min-width: {($interval * 5) + $px}px; left: {($startInterval * 5) - 1}px;">
+<div n:class="block, $active ? active, $condition" style="width: {($interval * 5) + $px}px; min-width: {($interval * 5) + $px}px; left: {($startInterval * 5) - 1}px;">
     <div class="name">
         {$name}
     </div>

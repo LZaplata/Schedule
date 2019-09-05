@@ -24,6 +24,13 @@ class BlockControl extends Control
     /** @var string */
     private $note;
 
+    /** @var string */
+    private $condition;
+
+    /** @var string */
+    const CONDITION_CANCELLED = "cancelled",
+        CONDITION_WARNING = "warning";
+
     /**
      * BlockControl constructor.
      * @param ScheduleControl $scheduleControl
@@ -154,6 +161,22 @@ class BlockControl extends Control
     }
 
     /**
+     * @return string
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * @param string $condition
+     */
+    public function setCondition($condition)
+    {
+        $this->condition = $condition;
+    }
+
+    /**
      * @return void
      */
     public function render()
@@ -166,6 +189,7 @@ class BlockControl extends Control
         $this->template->absoluteEndInterval = $this->getAbsoluteEndInterval();
         $this->template->datePeriod = $this->datePeriod;
         $this->template->note = $this->note;
+        $this->template->condition = $this->condition;
         $this->template->setFile(__DIR__ . "/templates/block.latte");
         $this->template->render();
     }
