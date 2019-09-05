@@ -21,6 +21,9 @@ class BlockControl extends Control
     /** @var ScheduleControl */
     private $scheduleControl;
 
+    /** @var string */
+    private $note;
+
     /**
      * BlockControl constructor.
      * @param ScheduleControl $scheduleControl
@@ -135,6 +138,22 @@ class BlockControl extends Control
     }
 
     /**
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param string $note
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+    }
+
+    /**
      * @return void
      */
     public function render()
@@ -146,6 +165,7 @@ class BlockControl extends Control
         $this->template->actualInterval = $this->getActualInterval();
         $this->template->absoluteEndInterval = $this->getAbsoluteEndInterval();
         $this->template->datePeriod = $this->datePeriod;
+        $this->template->note = $this->note;
         $this->template->setFile(__DIR__ . "/templates/block.latte");
         $this->template->render();
     }

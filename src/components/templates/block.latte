@@ -6,8 +6,13 @@
     <div class="name">
         {$name}
     </div>
-    <div class="time">
-        {$datePeriod->getStartDate()->format("H:i")}
+    <div class="d-flex">
+        <div class="time">
+            {$datePeriod->getStartDate()->format("H:i")}
+        </div>
+        <div class="note" n:if="$note">
+            &nbsp;-&nbsp;{$note}
+        </div>
     </div>
 
     <span n:if="$active" style="width: {$percent|noescape}%;"></span>
