@@ -68,11 +68,11 @@ class RoomControl extends Control
 
         $this->blocks[$dayOfWeek][] = $block;
 
-        if ($this->scheduleControl->getStartTime() > $startTime || $this->scheduleControl->getStartTime() === null) {
+        if (($this->scheduleControl->getStartTime() > $startTime || $this->scheduleControl->getStartTime() === null) && $dayOfWeek == $this->scheduleControl->getDayOfWeek()) {
             $this->scheduleControl->setStartTime($startTime);
         }
 
-        if ($this->scheduleControl->getEndTime() < $endTime || $this->scheduleControl->getEndTime() === null) {
+        if ($this->scheduleControl->getEndTime() < $endTime || $this->scheduleControl->getEndTime() === null && $dayOfWeek == $this->scheduleControl->getDayOfWeek()) {
             $this->scheduleControl->setEndTime($endTime);
         }
 
