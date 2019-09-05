@@ -69,6 +69,10 @@ class RoomControl extends Control
         $this->blocks[$dayOfWeek][] = $block;
 
         if (($this->scheduleControl->getStartTime() > $startTime || $this->scheduleControl->getStartTime() === null) && $dayOfWeek == $this->scheduleControl->getDayOfWeek()) {
+            if ($startTime->format("i") > 0) {
+                $startTime->setTime($startTime->format("H"), 0);
+            }
+
             $this->scheduleControl->setStartTime($startTime);
         }
 
