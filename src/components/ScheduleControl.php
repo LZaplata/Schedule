@@ -138,6 +138,7 @@ class ScheduleControl extends Control
     public function handleRefresh()
     {
         $this->redrawControl("rooms");
+        $this->redrawControl("time");
     }
 
     /**
