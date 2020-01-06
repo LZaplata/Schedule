@@ -1,6 +1,6 @@
 <div class="schedule-day-select mb-3 d-flex justify-content-between align-items-center">
     <p class="mb-0 h3 font-weight-normal text-dark" style="flex: 1;">
-        Dnes je {$control->startTime->format("j. n. Y")}
+        Dnes je {$days[date("N")]|lower} {$control->startTime->format("j. n. Y")}
     </p>
     <div class="d-flex justify-content-center" style="flex: 2;">
         <a href="{link this dayOfWeek => $key}" n:foreach="$days as $key => $day" n:class="btn, btn-outline-secondary, d-inline-flex, mr-3, $dayOfWeek == $key ? active">
